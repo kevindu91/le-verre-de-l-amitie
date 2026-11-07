@@ -28,5 +28,21 @@
 <body>
   <img src="verre_amitie.jpg"
        alt="Le verre de l'amitié">
+
+  <audio id="voix" preload="auto" autoplay>
+    <source src="verre_amitie_voix.mp3"
+            type="audio/mpeg">
+  </audio>
+
+  <script>
+    const voix = document.getElementById("voix");
+
+    window.addEventListener("load", () => {
+      voix.volume = 0.2;
+      voix.play().catch(() => {
+        console.log("Lecture automatique bloquée");
+      });
+    });
+  </script>
 </body>
 </html>
